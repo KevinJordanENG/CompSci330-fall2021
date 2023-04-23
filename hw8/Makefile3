@@ -1,0 +1,14 @@
+all: hw8-KevinJordan-3.c hw8-lib-KevinJordan.so
+	gcc hw8-KevinJordan-3.c -ldl -o hw8
+hw8-lib-KevinJordan.so: hw5-scan.o hw5-load.o hw5-search.o hw5-free.o
+	gcc -shared hw5-scan.o hw5-load.o hw5-search.o hw5-free.o -o hw8-lib-KevinJordan.so
+hw5-scan.o: hw5-scan.c
+	gcc -shared -c -fpic hw5-scan.c
+hw5-load.o: hw5-load.c
+	gcc -shared -c -fpic hw5-load.c
+hw5-search.o: hw5-search.c
+	gcc -shared -c -fpic hw5-search.c
+hw5-free.o: hw5-free.c
+	gcc -shared -c -fpic hw5-free.c
+clean:
+	rm -rf *.o *.so hw8

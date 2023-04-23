@@ -1,0 +1,14 @@
+all: hw5-main.o hw5-scan.o hw5-load.o hw5-search.o hw5-free.o
+	gcc hw5-main.o hw5-scan.o hw5-load.o hw5-search.o hw5-free.o -o hw5
+hw5-main.o: hw5-main.c
+	gcc -c hw5-main.c
+hw5-scan.o: hw5-scan.c
+	gcc -c hw5-scan.c
+hw5-load.o: hw5-load.c
+	gcc -c hw5-load.c
+hw5-search.o: hw5-search.c
+	gcc -c hw5-search.c
+hw5-free.o: hw5-free.c
+	gcc -c hw5-free.c
+clean:
+	rm -rf *.o hw5
